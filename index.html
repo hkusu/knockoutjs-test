@@ -4,10 +4,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=charset=UTF-8">
 <title>Knockout.js test</title>
 <script type='text/javascript' src='knockout-3.0.0.js'></script>
-<script type='text/javascript' src='test.js'></script>
-</head>
-<body bgcolor=white background="xxx.gif" text=black link=blue vlink=fuchsia alink=red>
 
+<script type="text/javascript">
+
+function myFunc(){
+	myMess = "Welcome!";
+	document.write( myMess );
+}
+
+function AppViewModel(){
+	this.firstName = ko.observable("Bert");
+	this.lastName = ko.observable("Bertington");
+
+	this.fullName = ko.computed(function() {
+		return this.firstName() + " " + this.lastName();
+	}, this);
+
+	this.capitalizeLastName = function() {
+		var currentVal = this.lastName();
+		this.lastName(currentVal.toUpperCase());
+	};
+}
+
+ko.applyBindings(new AppViewModel());
+
+</script>
+
+</head>
+<body>
+
+<script type="text/javascript"><!--
+	myFunc();
+// --></script>
 
 <p>First name: <strong data-bind="text: firstName"></strong></p>
 <p>Last name: <strong data-bind="text: lastName"></strong></p>
