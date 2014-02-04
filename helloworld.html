@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=charset=UTF-8">
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+    //ViewModel
+    function TestViewModel(){
+        self = this;
+        self.sample = "Ç±ÇÒÇ…ÇøÇÕê¢äEÅI";
+    }
+    ko.applyBindings(new TestViewModel());
+
+});
+</script>
+</head>
+<body>
+
+<span data-bind="text:sample"></span>
+
+</body>
+</html>
